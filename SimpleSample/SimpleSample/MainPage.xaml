@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:SimpleSample" 
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             x:Class="SimpleSample.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:ViewModel />
+    </ContentPage.BindingContext>
+    <buttons:SfRadioGroup x:Name="radioGroup" BindableLayout.ItemsSource="{Binding Items}">
+        <BindableLayout.ItemTemplate>
+            <DataTemplate>
+                <buttons:SfRadioButton x:Name="radioButton" IsChecked="{Binding IsChecked}" Text="{Binding Item}">
+                    <buttons:SfRadioButton.Behaviors>
+                        <local:EventToCommandBehavior
+                                             EventName="StateChanged"
+                                             Command="{Binding StateChangedCommand}"
+                                             CommandParameter="{x:Reference radioButton}"/>
+                    </buttons:SfRadioButton.Behaviors>
+                </buttons:SfRadioButton>
+            </DataTemplate>
+        </BindableLayout.ItemTemplate>
+    </buttons:SfRadioGroup>
+</ContentPage>
