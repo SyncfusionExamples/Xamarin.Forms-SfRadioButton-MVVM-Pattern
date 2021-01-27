@@ -1,10 +1,7 @@
-﻿using Syncfusion.XForms.UWP.Border;
-using Syncfusion.XForms.UWP.Buttons;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
@@ -17,7 +14,6 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Xamarin.Forms.Platform.UWP;
 
 namespace SimpleSample.UWP
 {
@@ -43,7 +39,12 @@ namespace SimpleSample.UWP
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
-
+#if DEBUG
+            if (System.Diagnostics.Debugger.IsAttached)
+            {
+                this.DebugSettings.EnableFrameRateCounter = true;
+            }
+#endif
 
             Frame rootFrame = Window.Current.Content as Frame;
 
@@ -56,16 +57,7 @@ namespace SimpleSample.UWP
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
-                // you'll need to add `using System.Reflection;`
-                List<Assembly> assembliesToInclude = new List<Assembly>();
-
-                //Now, add all the assemblies that your app uses 
-                assembliesToInclude.Add(typeof(SfButtonRenderer).GetTypeInfo().Assembly);
-                assembliesToInclude.Add(typeof(SfBorderRenderer).GetTypeInfo().Assembly);
-                assembliesToInclude.Add(typeof(ListViewRenderer).GetTypeInfo().Assembly);
-
-                // replaces Xamarin.Forms.Forms.Init(e);        
-                Xamarin.Forms.Forms.Init(e, assembliesToInclude);
+                Xamarin.Forms.Forms.Init(e);
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
