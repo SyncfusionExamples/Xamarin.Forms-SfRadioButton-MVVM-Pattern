@@ -37,11 +37,11 @@ using Syncfusion.XForms.Buttons;
 ```
 
 <ContentPage xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms">
-<ContentPage.Content>
-  <StackLayout>
-     <syncfusion:SfRadioButton x:Name="radioButton"/>        
-</StackLayout>
-</ContentPage.Content>
+  <ContentPage.Content>
+    <StackLayout>
+      <syncfusion:SfRadioButton x:Name="radioButton"/>        
+    </StackLayout>
+  </ContentPage.Content>
 </ContentPage>
 ```
 
