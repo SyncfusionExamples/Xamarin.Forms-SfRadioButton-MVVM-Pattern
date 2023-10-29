@@ -34,11 +34,5 @@
     <string>SimpleSample</string>
     <key>XSAppIconAssets</key>
     <string>Assets.xcassets/AppIcon.appiconset</string>
-  <key>UIAppFonts</key>
-  <array>
-    <string>Segoe_MDL2_Assets.ttf</string>
-    <string>FontAwesome.otf</string>
-    <string>Segoe_MDL2_Assets.ttf</string>
-  </array>
 </dict>
 </plist>
