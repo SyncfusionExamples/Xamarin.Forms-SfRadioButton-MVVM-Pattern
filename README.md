@@ -14,7 +14,7 @@ If you prefer to manually reference the assemblies instead referencing from NuGe
 
 Location: {Installed location}/{version}/Xamarin/lib
 
-# Create a Simple SfRadioButton
+## Create a Simple SfRadioButton
 The SfRadioButton control is configured entirely in C# code or by using XAML markup. The following steps explain how to create a SfRadioButton and configure its elements.
 
 ## Add namespace for referred assemblies
