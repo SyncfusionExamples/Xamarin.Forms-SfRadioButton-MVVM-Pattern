@@ -1,18 +1,14 @@
-﻿using Syncfusion.XForms.Buttons;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
-using System.Windows.Input;
-using Xamarin.Forms;
 
 namespace SimpleSample
 {
-
     public class ViewModel : INotifyPropertyChanged
     {
-      
+
         public List<Model> Items { get; set; }
 
         public ViewModel()
